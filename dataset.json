@@ -1,0 +1,151 @@
+[
+    {
+        "question": "What is my slot time?",
+        "answer": "The lab slot timing will be available on the Elearn Lab folder or Teams channel."
+    },
+    {
+        "question": "How much time will I get for the slot?",
+        "answer": "Normally, a slot is meant for 2 hours of server time. In the case of remote labs or Citrix, it might be a whole-day access. Check the slide deck shared during the first session for the same details."
+    },
+    {
+        "question": "I have to cancel my slot; what should I do?",
+        "answer": "Slot cancellation is not permitted due to resource constraints; proactively, you can find a friend who is ready to swap your slot. The details of your BITS ID and your friend's ID, along with the allotted slot time, can be sent to the lab admins and lab instructor. Check the lab folder in Elearn for their email IDs."
+    },
+    {
+        "question": "Report some issues in the server.",
+        "answer": "You can drop an email or create a ticket using the support folder on the team's channel to report an issue. Proactively read the FAQs on the channel or lab folder and try to solve the issue independently. Chat with your friends on the WhatsApp group as well before raising an issue."
+    },
+    {
+        "question": "Arrangement of makeup slots",
+        "answer": "Make-up or additional slots will be based on availability and genuine reasons. For server issues, additional slots will be arranged. Drop an email or create a support ticket using the support folder on Teams. Email should be sent to lab admins and lab instructors."
+    },
+    {
+        "question": "How do I start the lab?",
+        "answer": "Start with watching the first lab lecture, read the tutorial manual, or watch the tutorial videos before the slot date. Make some notes and read the FAQs for the famous issues."
+    },
+    {
+        "question": "How much marks?",
+        "answer": "Refer to the lab course handouts for the evaluation components."
+    },
+    {
+        "question": "I missed the Lab slot; what should I do?",
+        "answer": "The slot is valuable, and missing a slot is not a good sign of academic requirements. It is advised to inform your industry mentor about the lab slots and get the time from your organization. As you know, you have committed to BITS Pilani that you will follow the academic requirements. In case of any emergency, it is always good to swap your slots with your friends well in advance."
+    },
+    {
+        "question": "Are these the only tutorials to be completed for virtual lab submission?",
+        "answer": "Check the lab course handouts for the tutorials related to the specific labs."
+    },
+    {
+        "question": "Do we need to complete classroom problems like simuscape hydraulics DC motor modelling?",
+        "answer": "Tutorials are classified as Tutorials for Marks to be completed for the marks. Rest is for knowledge only and good to know."
+    },
+    {
+        "question": "Where are classroom problems?",
+        "answer": "Classroom problems will also be in the tutorials folder. Check the tutorial folder on the team's channel or the lab folder in Elearn."
+    },
+    {
+        "question": "I am not able to book a new slot because the previous slot is not deleted, and I can't book more than one slot.",
+        "answer": "Please write an email to the lab instructor in this regard. Check the email id on the Elearn lab folder."
+    },
+    {
+        "question": "What about the marks for the Virtual lab tutorials that we have submitted?",
+        "answer": "Check the lab course handouts for the evaluation components of the lab. Lab course handouts will be available in the lab folder on eLearn or the team's channel."
+    },
+    {
+        "question": "How many marks have been allotted for the virtual lab practice?",
+        "answer": "Check the lab course handouts for the evaluation components of the lab. Lab course handouts will be available in the lab folder on eLearn or the team channel."
+    },
+    {
+        "question": "Where is the question available?",
+        "answer": "Check your BITS email for the questions."
+    },
+    {
+        "question": "Getting a Black Screen",
+        "answer": "This might happen because of network instability; the stability is not based on high speed. Try changing your network; if the problem keeps happening, just log in and log in again. If nothing works, drop an email to the lab instructor with the screenshot."
+    },
+    {
+        "question": "Facing problems with license",
+        "answer": "Keep trying to enter the license details as per the instructor (check the first session slide). Delete the license details typed on the files and select other radio buttons. Just enter the correct details and click on it. And keep trying again. If nothing works, drop an email to the lab instructor with the screenshot."
+    },
+    {
+        "question": "Where can I find the form link?",
+        "answer": "Form links are not a part of the submissions; you can check with your lab instructor about this."
+    },
+    {
+        "question": "Do we have to show bits ID at the start of the exam?",
+        "answer": "Not required; the lab exam will be recorded, and your hall ticket photograph will match your live streaming."
+    },
+    {
+        "question": "How many problems are there for the Simulink lab practice submission?",
+        "answer": "Check the lab course handouts located on the eLearn lab folder or teams channel."
+    },
+    {
+        "question": "Please clarify what is to be done for the Simulink practice assignment.",
+        "answer": "Check the lab course handouts located on the eLearn lab folder or teams channel. The problems are classified as marks to be practiced. Rest is for knowledge."
+    },
+    {
+        "question": "The tutorial video link is not opening. Can you please help how to access these videos?",
+        "answer": "Please check the teams' channel or the elearn lab folder for the same. Use your BITS I’d to access the resources."
+    },
+    {
+        "question": "Camera not visible",
+        "answer": "Inform the lab admin on the WhatsApp group about the same. He will close the same."
+    },
+    {
+        "question": "Password missing",
+        "answer": "Please drop an email to the lab admin in this regard. Get the email id from the elearn lab folder."
+    },
+    {
+        "question": "Login Credential issue",
+        "answer": "Please follow the Instruction video shared in the email. If nothing works, drop an email to the lab admin with the screenshots and drop a message on the WhatsApp group."
+    },
+    {
+        "question": "Mail not received after performing experiments",
+        "answer": "Drop an email to the lab admin in this regard with screenshots."
+    },
+    {
+        "question": "Software crashing after running simulation",
+        "answer": "Make sure the correct parameters are given and close too many windows if open. Inform the lab admin in this regard on WhatsApp and email with screenshots."
+    },
+    {
+        "question": "Got the server is busy message, and it's frozen now",
+        "answer": "Try after 10 minutes; if the problem keeps happening, drop an email or create a support ticket using the support folder on teams to the lab admin with screenshots."
+    },
+    {
+        "question": "Not received any credentials yet as per the assigned schedule.",
+        "answer": "Credentials will be sent any time before one hour of the slot start time. Keep an eye on your BITS email."
+    },
+    {
+        "question": "How to submit a virtual lab simulink practice exercise",
+        "answer": "All submissions for the lab will be on elearn. Keep checking the announcements for the lab submission folders."
+    },
+    {
+        "question": "At the end of the Simulink videos, there is a reminder to attend the quiz. Can someone tell me where to take this quiz?",
+        "answer": "All the lab quizzes will be administered on the Elearn. The quiz related to the videos is not generally available; you can ignore them. But the quizzes opened on elearn should be completed."
+    },
+    {
+        "question": "The remote machine is turned off..can you please restart the machine?",
+        "answer": "Please inform the lab admin over email or WhatsApp messages on the group."
+    },
+    {
+        "question": "I have submitted the responses on the form for remote lab submission, but for elearn submission, I don't have the PDFs of my submitted response.",
+        "answer": "All submissions for the lab will be on elearn. Keep checking the announcements for the lab submission folders. If the instructor opens any other platform, please encourage him to use elearn only for submissions."
+    },
+    {
+        "question": "Is the password for the remote lab the same as the previously issued password?",
+        "answer": "The credentials will be shared via a fresh email every time. Just use the latest credentials alone."
+    },
+    {
+        "question": "Can you tell me what needs to be added to the report?",
+        "answer": "Please check the report format shared in the lab folder. And watch the respective lab session mentioned in the report."
+    },
+    {
+        "question": "Should we have to add a hall ticket to the report?",
+        "answer": "The hall ticket has to be added for lab exam reports."
+    },
+    {
+        "question": "I have submitted my lab tutorials through an online form and not uploaded them in e-learn.",
+        "answer": "All submissions for the lab will be on elearn. Keep checking the announcements for the lab submission folders. If the instructor opens any other platform, please encourage him to use elearn only for submissions. You should also upload your assignment or tutorial practice on Elearn."
+    }
+]
+

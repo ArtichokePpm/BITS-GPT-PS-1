@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Widget</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'></script>
+</head>
+<body>
+    <div id="loginWidget" class="widget">
+        <div class="header">
+            <span class="title">Login</span>
+        </div>
+        <div id="loginContent">
+            <h2>Welcome</h2>
+            <form onsubmit="handleLogin(event)">
+                <input type="text" id="userId" placeholder="User ID" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <select id="course" required>
+                    <option value="">Select Course</option>
+                    <option value="lab">Lab</option>
+                </select>
+                <button type="submit">Login</button>
+            </form>
+            <p id="errorMessage" style="display: none;">Please fill in all fields.</p>
+        </div>
+    </div>
+
+    <div id="chatWidget" class="widget hidden">
+        <div class="header">
+            <span class="title">Chat Widget</span>
+            <button class="minimize-button" onclick="toggleWidget()">-</button>
+        </div>
+        <div id="chatContent">
+            <div id="chatInterface"></div>
+            <div id="chatInputContainer">
+                <label for="fileInput" class="file-upload-label">Upload</label>
+                <input type="file" id="fileInput" onchange="handleFileUpload(event)" accept="image/*,.pdf,.doc,.docx">
+                <input type="text" id="chatInput" placeholder="Type your message..." onkeydown="handleKeyDown(event)">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="minimizedWidget" class="hidden" onclick="toggleWidget()">
+        Chat
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
