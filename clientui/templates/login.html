@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <title>Login Page</title>
+    <style>
+        /* Additional styling for the messages */
+        .input-message {
+            color: #11134e;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            position: absolute;
+        }
+
+        .input-message#id-message {
+            left: 50.55px;
+            top: 192px;
+        }
+
+        .input-message#password-message {
+            left: 50.55px;
+            top: 253px;
+        }
+    </style>
+</head>
+<body>
+    <div id="login-page">
+        <div id="id-message" class="input-message">Please enter your BITS ID:</div>
+        <input type="text" id="user-id" placeholder="Type here..">
+
+        <div id="password-message" class="input-message">Please enter your password:</div>
+        <input type="password" id="password" placeholder="Password">
+
+        <div id="warning-message">Please fill in all fields!</div>
+
+        <button id="login-button" onclick="validateAndSubmit()"></button>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

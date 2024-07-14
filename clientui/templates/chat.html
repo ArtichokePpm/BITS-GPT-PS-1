@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Hide scroll bars */
+            width: 100%;
+            height: 100%;
+            background-color: #f5eccc; /* Set background color */
+            position: relative; /* Ensure positioning context */
+            font-family: 'DM Sans', sans-serif; /* Apply DM Sans font to the entire body */
+        }
+
+        #header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40px; /* Height of header */
+            background-color: #b0cdda; /* Blue background color */
+            z-index: 1000; /* Ensure header is above other elements */
+            display: flex;
+            justify-content: center; /* Center the text horizontally */
+            align-items: center; /* Center the text vertically */
+        }
+
+        #header-text {
+            color: black;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 18px;
+        }
+        #chat-container {
+            position: absolute;
+            top: 50px; /* Below the header */
+            left: 0;
+            width: 100%;
+            height: calc(100% - 110px); /* Account for header and input area */
+            overflow-y: auto; /* Enable vertical scrolling */
+            padding: 10px;
+
+            /* Additional styling for scroll bar visibility */
+            scrollbar-width: thin; /* Thin scroll bars */
+            scrollbar-color: #11143e #b0cdda; /* Scroll bar color */
+        }
+
+/* Styling for scroll bar track and thumb */
+        #chat-container::-webkit-scrollbar {
+            width: 8px; /* Width of the scroll bar */
+        }
+
+        #chat-container::-webkit-scrollbar-track {
+            background: #b0cdda; /* Scroll bar track color */
+        }
+
+        #chat-container::-webkit-scrollbar-thumb {
+            background-color: #11143e; /* Scroll bar thumb color */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        .message {
+            max-width: 70%;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px 0;
+            word-wrap: break-word;
+            font-size: 12px;
+        }
+
+        .bot-message {
+            background-color: #b0cdda; /* Bot message background color */
+            align-self: flex-start; /* Align bot messages to the left */
+            color:#11143e;
+            font-size: 12px;
+        }
+
+        .user-message {
+            background-color: #11143e; /* User message background color */
+            color: #f5eccc; /* User message text color */
+            font-size: 12px;
+            align-self: flex-end; /* Align user messages to the right */
+        }
+
+        #send-button {
+            margin-left: 5px; /* Space between text field and button */
+            margin-right: 15px;
+            padding: 5px; /* Padding for button */
+            background-color: #11143e; /* Red background color */
+            color: #f5eccc; /* Text color */
+            font-family: 'DM Sans', sans-serif; /* Font family */
+            font-size: 10px; /* Font size */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor */
+            transition: background-color 0.3s ease; /* Transition effect for background color */
+        }
+
+        #send-button:hover {
+           transform: scale(1.1);
+        }
+
+        #footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px; /* Height of footer */
+            background-color: #b0cdda; /* Same background color as body */
+            z-index: 1000; /* Ensure footer is above other elements */
+            display: flex;
+            align-items: center;
+            padding: 0 10px; /* Padding for inner content */
+        }
+
+        #upload-icon {
+            width: 20px; /* Adjust size */
+            height: 20px; /* Adjust size */
+            cursor: pointer;
+            background: url('static/images/upload_icon.png') no-repeat center center / cover;
+            transition: transform 0.3s ease;
+            border-radius: 50%;
+        }
+
+        #upload-icon:hover {
+            transform: scale(1.1); /* Increase size on hover */
+        }
+
+        #upload-text-field {
+        flex: 1;
+        margin-left: 10px; /* Space between icon and text field */
+        height: 30px; /* Adjust height as needed */
+        width: 170px; /* Set width to 170px */
+        padding: 5px;
+        background-color: #f5eccc; /* Red background color */
+        color: #11143e; /* Text color */
+        font-family: 'DM Sans', sans-serif; /* Font family */
+        font-size: 14px; /* Font size */
+        border: none; /* Remove border */
+        border-radius: 5px; /* Rounded corners */
+        padding-left: 10px; /* Padding inside text field */
+     }
+
+        #upload-text-field::placeholder {
+            color: #11143e; /* Placeholder text color */
+        }
+
+        #new-chat-button {
+            position: absolute;
+            top: 10px; /* Adjust position from top */
+            left: 10px; /* Adjust position from left */
+            padding: 5px 10px; /* Padding for button, smaller size */
+            background-color: #DA2B24; /* Red background color */
+            color: white; /* Text color */
+            font-family: 'DM Sans', sans-serif; /* Font family */
+            font-size: 12px; /* Smaller font size */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor */
+            transition: background-color 0.3s ease; /* Transition effect for background color */
+            z-index: 1001; /* Ensure button is above other elements */
+        }
+
+        #new-chat-button:hover {
+            background-color: #AA1F1A; /* Darker red on hover */
+        }
+
+        .popup {
+            display: none; /* Hidden by default */
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #b0cdda;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-family: 'DM Sans', sans-serif;
+            z-index: 1000; /* High z-index to ensure it appears on top */
+            width: 300px; /* Increase width of popup box */
+        }
+
+        .popup button {
+            margin-top: 10px; /* Space between buttons */
+            background-color: #DA2B24; /* Red background color */
+            color: white; /* Text color */
+            font-family: 'DM Sans', sans-serif; /* Font family */
+            font-size: 14px; /* Font size */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px; /* Padding */
+            cursor: pointer; /* Pointer cursor */
+            transition: background-color 0.3s ease; /* Transition effect for background color */
+        }
+
+        .popup button:hover {
+            background-color: #AA1F1A; /* Darker red on hover */
+        }
+
+        #close-popup {
+            position: absolute;
+            top: -10px; /* Adjust position from top */
+            right: -10px; /* Adjust position from right */
+            width: 20px; /* Adjust size */
+            height: 20px; /* Adjust size */
+            background-color: #DA2B24; /* Red background color */
+            color: white; /* Text color */
+            font-family: 'DM Sans', sans-serif; /* Font family */
+            font-size: 12px; /* Font size */
+            border: none; /* Remove border */
+            border-radius: 50%; /* Rounded shape */
+            cursor: pointer; /* Pointer cursor */
+            transition: background-color 0.3s ease; /* Transition effect for background color */
+        }
+
+        #close-popup:hover {
+            background-color: #AA1F1A; /* Darker red on hover */
+        }
+
+
+    </style>
+    <title>Chat Page</title>
+</head>
+<body>
+    <div id="header">
+        <span id="header-text">Chat</span>
+    </div>
+
+    <div id="chat-container"></div>
+
+    <div id="footer">
+        <div id="upload-icon" onclick="document.getElementById('file-input').click()"></div>
+        <input type="file" id="file-input" style="display: none;" accept="image/*" onchange="displayImage(event)">
+        <input type="text" id="upload-text-field" placeholder="Type here...">
+        <button id="send-button" onclick="sendMessage()">Send</button>
+    </div>
+
+    <!-- New chat button -->
+    <button id="new-chat-button" onclick="showPopup()">New Chat</button>
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <button id="close-popup" onclick="closePopup()">x</button>
+        <button onclick="chooseNewCourse()">Start a new chat</button>
+        <button onclick="continueWithSameCourse()">Continue with this course</button>
+    </div>
+
+    <script>
+        function displayImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.style.maxWidth = '70%';
+                    img.style.borderRadius = '10px';
+                    img.style.margin = '5px 0';
+                    img.style.display = 'block';
+
+                    const imgContainer = document.createElement('div');
+                    imgContainer.className = 'message user-message';
+                    imgContainer.appendChild(img);
+
+                    document.getElementById('chat-container').appendChild(imgContainer);
+                    document.getElementById('chat-container').scrollTop = document.getElementById('chat-container').scrollHeight;
+
+                    // Send image to the server
+                    const formData = new FormData();
+                    formData.append('file', file);
+
+                    fetch('/upload_image', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        const botMessage = document.createElement('div');
+                        botMessage.className = 'message bot-message';
+                        botMessage.textContent = data.message;
+                        document.getElementById('chat-container').appendChild(botMessage);
+
+                        document.getElementById('chat-container').scrollTop = document.getElementById('chat-container').scrollHeight;
+                    })
+                    .catch(error => {
+                        console.error('Error uploading image:', error);
+                    });
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+    function sendMessage() {
+    const textField = document.getElementById('upload-text-field');
+    const message = textField.value.trim();
+    if (message === '') return;
+
+    // Add user message to chat
+    const userMessage = document.createElement('div');
+    userMessage.className = 'message user-message';
+    userMessage.textContent = message;
+    document.getElementById('chat-container').appendChild(userMessage);
+
+    // Scroll to the bottom of the chat container
+    document.getElementById('chat-container').scrollTop = document.getElementById('chat-container').scrollHeight;
+
+    // Clear the text field
+    textField.value = '';
+
+    // Fetch bot response from Flask endpoint
+    fetch('/get_bot_response', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `user_message=${encodeURIComponent(message)}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        const botMessage = document.createElement('div');
+        botMessage.className = 'message bot-message';
+        botMessage.textContent = data.bot_response;
+        document.getElementById('chat-container').appendChild(botMessage);
+
+        // Scroll to the bottom of the chat container after bot response
+        document.getElementById('chat-container').scrollTop = document.getElementById('chat-container').scrollHeight;
+    })
+    .catch(error => {
+        console.error('Error fetching bot response:', error);
+    });
+}
+
+
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function chooseNewCourse() {
+            window.location.href = '/course'; // Navigate to login.html
+        }
+
+        function continueWithSameCourse() {
+            location.reload(); // Refresh chat.html
+        }
+
+        document.getElementById('upload-text-field').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevent default form submission
+                sendMessage(); // Call the sendMessage function
+            }
+        });
+
+        function displayBotMessage() {
+            const botMessage = document.createElement('div');
+            botMessage.textContent = "How may I help you today?";
+            botMessage.className = 'message bot-message';
+
+            document.getElementById('chat-container').appendChild(botMessage);
+        }
+
+        window.onload = function() {
+            displayBotMessage();
+        };
+
+        function closePopup() {
+             document.getElementById('popup').style.display = 'none';
+         }
+
+
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Course Page</title>
+</head>
+
+<body class="course-page">
+    <div class="welcome-message">
+        Welcome {{ user_name }}!
+    </div>
+    <div class="custom-dropdown" onclick="toggleDropdown()">
+        <span id="selectedCourse">Select Course</span>
+        <span>&#9660;</span>
+    </div>
+    <div id="myDropdown" class="dropdown-content">
+         {% for course in courses %}
+             <a href="#" onclick="selectCourse('{{ course.course_name }}')">{{ course.course_name }}</a>
+        {% endfor %}
+    </div>
+    
+    <button class="chat-button" onclick="goToChatPage()"></button>
+    <button class="course-button" onclick="goToChatPageWithSelectedCourse()"> </button>
+    <input type="hidden" id="selectedCourseInput" value="General">
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+
+</html>
