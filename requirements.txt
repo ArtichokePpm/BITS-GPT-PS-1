@@ -1,0 +1,7 @@
+Flask==2.1.2
+Flask-PyMongo==2.3.0
+Flask-Cors==3.0.10
+python-dotenv==0.19.2
+flask-cors
+pymongo
+pandas

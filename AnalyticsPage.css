@@ -1,0 +1,11 @@
+.analytics-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 200px; /* To account for the fixed sidebar */
+  padding: 20px;
+}
+
+.analytics-page .content {
+  text-align: center;
+}

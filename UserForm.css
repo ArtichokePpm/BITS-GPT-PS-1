@@ -1,0 +1,25 @@
+/* src/components/UserForm.css */
+.user-form {
+  margin-top: 20px;
+}
+
+.user-form div {
+  margin-bottom: 10px;
+}
+
+.user-form label {
+  margin-right: 10px;
+}
+
+.user-form input {
+  padding: 5px;
+}
+
+.user-form button {
+  padding: 10px 20px;
+  background-color: #26a69a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,12 @@
+.PilaniDepartmentsPage {
+  display: flex;
+}
+
+.content {
+  margin-left: 200px;
+  padding: 20px;
+}
+
+.course-section {
+  margin-top: 20px;
+}

@@ -1,0 +1,41 @@
+/* src/pages/DepartmentsPage.css */
+.DepartmentsPage {
+  display: flex;
+}
+
+.content {
+  margin-left: 200px;
+  padding: 20px;
+}
+
+.searchable-dropdown {
+  margin-bottom: 20px;
+}
+
+.create-department {
+  margin-top: 20px;
+}
+
+.create-department form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-department label {
+  margin-bottom: 10px;
+}
+
+.create-department input,
+.create-department select {
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.create-department .create-button {
+  padding: 10px 20px;
+  background-color: #26a69a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

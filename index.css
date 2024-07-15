@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #c3f7e8;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Styles for NavBar */
+.nav-bar {
+  width: 200px;
+  background-color: #000;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.nav-bar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-bar ul li {
+  padding: 15px;
+  text-align: center;
+}
+
+.nav-bar ul li a {
+  color: #00ff99;
+  text-decoration: none;
+  display: block;
+}
+
+.nav-bar ul li a:hover {
+  background-color: #333;
+}

@@ -1,0 +1,47 @@
+.LoginPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1f1f1f; /* Changed to dark theme */
+}
+
+.login-container {
+  text-align: center;
+  background-color: #2a2a2a; /* Changed to dark theme */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #555; /* Changed to match dark theme */
+  border-radius: 5px;
+  background-color: #3a3a3a; /* Changed to match dark theme */
+  color: white; /* Changed to match dark theme */
+}
+
+.login-container button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #0056b3;
+}

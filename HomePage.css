@@ -1,0 +1,47 @@
+/* src/pages/HomePage.css */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 200px;
+  padding: 20px;
+}
+
+.content {
+  text-align: center;
+}
+
+.top-buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.dashboard-button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #000;
+  color: #00ff99;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.dashboard-button:hover {
+  background-color: #333;
+}
+
+.analytics-section {
+  margin: 20px 0;
+}
+
+.more-analytics-button {
+  padding: 10px 20px;
+  background-color: #26a69a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,9 @@
+/* src/pages/AddUsersPage.css */
+.AddUsersPage {
+  display: flex;
+}
+
+.content {
+  margin-left: 200px;
+  padding: 20px;
+}
